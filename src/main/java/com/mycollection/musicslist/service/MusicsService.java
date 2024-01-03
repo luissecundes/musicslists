@@ -4,8 +4,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.mycollection.musicslist.dto.MusicsDTO;
+import com.mycollection.musicslist.dto.MusicsMinDTO;
 import com.mycollection.musicslist.entities.Musics;
 import com.mycollection.musicslist.repositories.MusicsRepository;
 
@@ -13,11 +15,19 @@ import com.mycollection.musicslist.repositories.MusicsRepository;
 public class MusicsService {
 	
 	@Autowired
-	MusicsRepository musicRepository;
+	MusicsRepository musicsRepository;
 
-		public List<MusicsDTO> findAll(){
-			List<Musics> response = musicRepository.findAll();
-			List<MusicsDTO> dto = response.stream().map(x -> new MusicsDTO(x)).toList();
+		@Transactional(readOnly = true)
+		public List<MusicsMinDTO> findAll(){
+			List<Musics> response = musicsRepository.findAll();
+			List<MusicsMinDTO> dto = response.stream().map(x -> new MusicsMinDTO(x)).toList();
+			return dto;
+		}
+		
+		@Transactional(readOnly = true)
+		public MusicsDTO findById(Long id){
+			Musics result = musicsRepository.findById(id).get();
+			MusicsDTO dto = new MusicsDTO(result);
 			return dto;
 		}
 }
