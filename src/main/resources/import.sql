@@ -1,3 +1,5 @@
+INSERT INTO tb_musics_list (name) VALUES ('Rock/Rap');
+INSERT INTO tb_musics_list (name) VALUES ('Funk/Pop');
 
 INSERT INTO tb_musics (nome, artista, ano_lancamento, genero, url_capa_album) VALUES ('Numb-Encore', 'Linkin Park', 2004, 'Rock', 'https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2F0kjzx89lp2t51.png');
 INSERT INTO tb_musics (nome, artista, ano_lancamento, genero, url_capa_album) VALUES ('From The Inside', 'Linkin Park', 2002, 'Rock', 'https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2F0kjzx89lp2t51.png');
@@ -9,3 +11,16 @@ INSERT INTO tb_musics (nome, artista, ano_lancamento, genero, url_capa_album) VA
 INSERT INTO tb_musics (nome, artista, ano_lancamento, genero, url_capa_album) VALUES ('Welcome to My Life', 'Simple Plan', 2004, 'Rock', 'https://upload.wikimedia.org/wikipedia/en/1/12/StillNotGettingAny.jpg');
 INSERT INTO tb_musics (nome, artista, ano_lancamento, genero, url_capa_album) VALUES ('Perfect', 'Simple Plan', 2003, 'Rock', 'https://upload.wikimedia.org/wikipedia/en/1/12/StillNotGettingAny.jpg');
 INSERT INTO tb_musics (nome, artista, ano_lancamento, genero, url_capa_album) VALUES ('Uptown Funk', 'Mark Ronson ft. Bruno Mars', 2014, 'Pop', 'https://upload.wikimedia.org/wikipedia/pt/7/77/Uptown_Funk.jpg');
+
+
+INSERT INTO tb_related (lists_id, musics_id, position) VALUES (1, 1, 0);
+INSERT INTO tb_related (lists_id, musics_id, position) VALUES (1, 2, 1);
+INSERT INTO tb_related (lists_id, musics_id, position) VALUES (1, 3, 2);
+INSERT INTO tb_related (lists_id, musics_id, position) VALUES (1, 4, 3);
+INSERT INTO tb_related (lists_id, musics_id, position) VALUES (1, 5, 4);
+
+INSERT INTO tb_related (lists_id, musics_id, position) VALUES (2, 6, 0);
+INSERT INTO tb_related (lists_id, musics_id, position) VALUES (2, 7, 1);
+INSERT INTO tb_related (lists_id, musics_id, position) VALUES (2, 8, 2);
+INSERT INTO tb_related (lists_id, musics_id, position) VALUES (2, 9, 3);
+INSERT INTO tb_related (lists_id, musics_id, position) VALUES (2, 10, 4);
